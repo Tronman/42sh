@@ -6,7 +6,7 @@
 /*   By: thzondo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/15 19:41:09 by thzondo           #+#    #+#             */
-/*   Updated: 2017/09/15 21:38:38 by thzondo          ###   ########.fr       */
+/*   Updated: 2017/09/15 21:43:11 by thzondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static void		handle_left_right(t_environment *env, int keycode)
 static void		remove_selected(t_environment *env)
 {
 	ft_remove_nth_from_array(array->current_word, (void*)env->words, 
-			sizeof(char*), env->word->word_count);
+			sizeof(char*), env->word_count);
 	ft_remove_nth_from_array(array->current_word, (void*)env->words,
 			sizeof(int), env->word_count);
 	env->word_count--;
@@ -81,7 +81,7 @@ static void		remove_selected(t_environment *env)
 		env->current_word = 0;
 }
 
-void	input_loo(void)
+void	input_loop(void)
 {
 	unsigned	long	keycode;
 	t_environment	*env;
