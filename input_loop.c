@@ -6,12 +6,23 @@
 /*   By: thzondo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/15 19:41:09 by thzondo           #+#    #+#             */
-/*   Updated: 2017/09/15 21:31:28 by thzondo          ###   ########.fr       */
+/*   Updated: 2017/09/15 21:38:38 by thzondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_select.h"
 
+
+
+static	void		select_deselect(t_environment *env)
+{
+	if (env->highlighted_p[env->current_word] == 1)
+		env->highlighted_p[env->current_word] = 0;
+	els
+		env->highlighted_p[env->current_word] = 1;
+	env->current_word = (env->current_word == env->word_count - 1
+		? 0 : env->environment_word + 1);
+}
 
 static void		handle_up_down(t_environment *env, int keycode)
 {
